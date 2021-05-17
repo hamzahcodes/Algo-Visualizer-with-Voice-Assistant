@@ -211,16 +211,16 @@ def get_clicked_pos(pos, rows, width):
     return row, col
 
 
-def main(win, width):
+def dijkstra_main(win, width):
     ROWS = 50
     grid = make_grid(ROWS, width)
 
     start = None
     end = None
 
-    run = True
+    runn = True
     started = False
-    while run:
+    while runn:
         draw(win, grid, ROWS, width)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -264,7 +264,8 @@ def main(win, width):
                         for node in row:
                             node.update_neighbours(grid)
 
-                    d_algorithm(lambda: draw(win, grid, ROWS, width), grid, start,end)        
+                    d_algorithm(lambda: draw(win, grid, ROWS, width), grid, start,end)  
+                    runn = False      
 
                 if event.key == pygame.K_c:
                     start = None
@@ -272,6 +273,7 @@ def main(win, width):
                     grid = make_grid(ROWS, width)
 
 
-    pygame.quit()   
+    return
+    #pygame.quit()   
 
-main(WIN, WIDTH)                 
+#main(WIN, WIDTH)                 

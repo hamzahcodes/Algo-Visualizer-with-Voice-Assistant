@@ -275,12 +275,7 @@ def astar_main(win, width):
                 if event.key == pygame.K_c:
                     start = None
                     end = None
-                    grid = make_grid(ROWS, width)
-
-        if flag == 1:
-            print("Inside flag == 1")
-            pygame.quit()
-            break            
+                    grid = make_grid(ROWS, width)           
 
 
     return

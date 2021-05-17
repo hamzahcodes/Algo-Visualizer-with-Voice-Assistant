@@ -125,6 +125,7 @@ def start(b):
 
         if 'a star' in query:
             speak("Ok Implementing Astar Now")
+            import Astar as a
             a.astar_main(a.WIN, WIDTH)
 
             speak("What do you want to do next?")
@@ -132,7 +133,19 @@ def start(b):
             query = takeCommand().lower()    
 
             if 'close' in query:
-                a.closing()
+                pygame.quit()
+
+        if 'dj' in query:
+            speak("Ok Implementing Dijkstra Now")
+            import Dijkstra as d
+            d.dijkstra_main(d.WIN, WIDTH)
+
+            speak("What do you want to do next?")
+
+            query = takeCommand().lower()    
+
+            if 'close' in query:
+                pygame.quit()        
 
         if 'whatsapp' in query:
             speak("Whom do you want to send message ? ")
@@ -263,12 +276,6 @@ def counter(c , b) :
     c.cnt += 1 
     print("Print cnt variable" , c.cnt)
     clicked(c , b)
-
-
-
-
-    
-
 
 bg = PhotoImage(file = "vc.png")
 label1 = Label( root, image = bg,bg='coral')
