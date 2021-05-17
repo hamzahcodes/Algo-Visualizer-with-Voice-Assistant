@@ -1,6 +1,4 @@
-from tkinter import *
 
-from tkinter import messagebox
 
 def thing():
    #messagebox.showinfo( None,"Hello Poojan")
